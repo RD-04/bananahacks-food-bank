@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+	<title>Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+
+  <style> h1 {
+  color: #ecc700;
+  padding: 8vh;
+  font-size: 40vh;
+  }
+  </style>
+
+	<script >
+	</script>
+
+</head>  
+
+	<body>
+		{% block content %} 
+			<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4" style="float:centre"><b>Current Inventory</b></h1>
+
+        <hr>
+
+        <table>
+          <tr>
+            <th> Product</th>
+            <th> # Of Servings</th>
+            <th> Calories </th>
+            <th> Iron </th>
+            <th> Magnesium </th>
+            <th> Vitamin C </th>
+            <th> Zinc </th>
+            <th> Calcium </th>
+            <th> Vitamin D </th>
+          </tr>
+        {%for i in inv%}
+          <tr>
+            <td> {{i[0]}} </td>
+            <td> {{i[1]}} </td>
+            <td> {{i[2]}} </td>
+            <td> {{i[3]}} </td>
+            <td> {{i[4]}} </td>
+            <td> {{i[5]}} </td>
+            <td> {{i[6]}} </td>
+            <td> {{i[7]}} </td>
+            <td> {{i[8]}} </td>
+          </tr>
+        {% endfor %}
+        </table>
+
+      </div>
+
+    <hr>
+<div class="container">
+                <h3 align="center"><a href=/inventory><button class=grey style="height:120px;width:150px;border:solid;background-color:#ecc700">Add Inventory</button></a></h3>
+              </div>
+    <hr>
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h3 class="display-4" style="float:centre"><b>Enter Info</b></h3>
+        <hr>
+        <p>
+          <!-- This is the form that collects the user input, it has 3 inputs that are then passed onto .the python script. The method is post and in the pyhton script it set up to handle the values of this form. -->
+        <form action = "#" method="post" autocomplete="on">
+
+        <label>Name</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br>
+        <br>
+        <label> Sex </label>
+        <br>
+        <p>
+        <input type="text" id="sex" name="sex" required> 
+        <br>
+        <br> 
+        <label for="age">Age</label> 
+        <br> 
+        <input type="number" id="age" name="age"  min="1" required>
+        <br>
+        <br> 
+        <label for="weight">Weight In Pounds</label>
+        <br>
+        <input type="number" id="weight" name="weight"  min="0" required placeholder="lbs">
+
+        <br>
+        <br>
+
+        <label for="height">Height In Inches</label>
+        <br>
+        <input type="number" id="height" name="height"  min="0" required placeholder="inches">
+        <br>  
+        <br> 
+        <label for="days">Number Of Days</label> 
+        <br> 
+        <input type="number" id="days" name="days"  min="1" max="7" required value="3">
+        <br>
+        <br> 
+          
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- This submit button submits all of the values to the python script and also redirects back to the main page -->
+        <input type="submit" value="Submit" style="float:right;border:solid" >
+      </form>
+        </p>
+        <br>
+        <br>
+      </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

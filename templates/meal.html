@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- This page is the settigs page. It contains a form that changes the settings of our vent control system  -->
+
+	<title>Meal Plans</title>
+  <!-- This is a link to import BootStrap which helps our site function and look better. -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous">
+	</script>
+</head>  
+
+	<body>
+		{% block content %} 
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h2 class="display-4">Meals</h2>
+				<br>
+        <br>
+        <hr>
+        <table>
+        {%for i in range(length)%}
+
+        <tr>
+        <th>Item 1.</th>
+        <th>{{inv[i][0]}}</th>
+        <th> {{meal[i]}}</th>
+        </tr>
+        {% endfor %}
+        </table>
+        </h3>  
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="container">
+                <h2 align="center"><a href=/><button class=grey style="height:120px;width:150px;border:solid;background-color:#ecc700">Main Page</button></a></h2>
+    </div>
+
+
+
+    {% endblock %}
+  </body>
+</html>
