@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<title>The Inventory Calculator</title>
+  <!-- This is a link to import BootStrap which helps our site function and look better. -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<script>
+	</script>
+
+  <style> h1 {
+  color: #ecc700;
+  padding: 8vh;
+  font-size: 40vh;
+  }
+  </style>
+
+</head>  
+
+	<body>
+		{% block content %} 
+
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4" style="float:centre"><b>Enter Inventory</b></h1>
+				<br>
+        <br>
+        <hr>
+        <h3>
+          <!-- This is the form that collects the user input, it has 3 inputs that are then passed onto .the python script. The method is post and in the pyhton script it set up to handle the values of this form. -->
+        <form action = "#" method="post" autocomplete="on">
+        
+        <br>
+    
+
+        <br>
+        <br>
+
+        <label for="identifyfood">Item Name</label>
+        <br>
+        <input type="text" id="name" name="name" for="identifyfood">
+        
+        <br>
+        <br>
+        
+        <label for="quantity">Quantity of Servings</label>
+        <br>
+        <input type="number" id="quantity" name="quantity" value="quant" min="0" required>
+         
+          
+        <br>
+        <br>
+
+        <input type="submit" value="Submit" style="float:right;border:solid">
+      </form>
+
+        </h3>  
+        <br>
+        <br>
+      </div>
+    </div>
+
+
+    {% endblock %}
+  </body>
+</html>
